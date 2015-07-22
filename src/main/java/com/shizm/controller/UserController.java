@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.shizm.model.User;
 import com.shizm.service.UserService;
 
 @Controller
@@ -34,4 +35,29 @@ public class UserController extends BaseController {
         mv.setViewName("users");
         return mv;
     }
+    @RequestMapping(value="/add",method=RequestMethod.GET)
+    public ModelAndView addUser(){
+    	
+        User user=new User();
+        user.name="test";
+        service.saveUser(user);
+        
+        ModelAndView mv = new ModelAndView();
+        mv.addObject("message", user);
+        mv.setViewName("users");
+        return mv;
+    }
+    
+    @RequestMapping(value="/update",method=RequestMethod.GET)
+    public ModelAndView update(String id){
+        User user=new User();
+        user.setId(id);
+        user.setName("testt2");
+        service.saveUser(user);
+        ModelAndView mv = new ModelAndView();
+        mv.addObject("message", user);
+        mv.setViewName("users");
+        return mv;
+    }
+    
 }

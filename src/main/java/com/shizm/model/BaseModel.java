@@ -31,13 +31,11 @@ public class BaseModel {
 	}
 
 	//时间戳
-	private Long version;
-	
 	@Version
+	private Long version;
 	public Long getVersion() {
 		return version;
 	}
-
 	public void setVersion(Long version) {
 		this.version = version;
 	}

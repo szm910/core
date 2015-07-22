@@ -3,8 +3,6 @@ package com.shizm.dao;
 import java.util.List;
 
 import org.hibernate.Query;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 
 import com.shizm.model.User;
 
@@ -13,23 +11,20 @@ import com.shizm.model.User;
  * @author shizm
  *
  */
-public class UserDao {
+public class UserDao extends BaseDao {
 
-	private SessionFactory sessionFactory;
-
-	public void setSessionFactory(SessionFactory sessionFactory) {
-		this.sessionFactory = sessionFactory;
-	}
-
-	public SessionFactory getSessionFactory() {
-		return sessionFactory;
-	}
-	
-	public Session getSession(){
-		return sessionFactory.getCurrentSession();
-	}
 	public boolean save(User user) {
 		System.out.println(user);
+		if (user.getId() != null) {
+			getSession().getTransaction().begin();
+			User oldUser = (User) getSession().get(User.class, user.getId());
+			oldUser.setName(user.name);
+			getSession().update(oldUser);
+			getSession().getTransaction().commit();
+			return true;
+		} else {
+			getSession().save(user);
+		}
 		return true;
 	}
 

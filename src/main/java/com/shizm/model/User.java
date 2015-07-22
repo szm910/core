@@ -1,8 +1,10 @@
 package com.shizm.model;
 
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
-@Entity(name="Users")
+@Entity
+@Table(name="Users")
 public class User extends BaseModel {
 	
 	public String name;

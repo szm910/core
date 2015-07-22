@@ -19,7 +19,7 @@ public class UserService {
 		return userDao.getAllUsers().size();
 	}
 	
-	public boolean addUser(User user){
+	public boolean saveUser(User user){
 		userDao.save(user);
 		return true;
 	}
