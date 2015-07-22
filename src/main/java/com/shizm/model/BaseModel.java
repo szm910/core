@@ -2,9 +2,11 @@ package com.shizm.model;
 
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
+import javax.persistence.Version;
+
+import org.hibernate.annotations.GenericGenerator;
 
 /**
  * 实体的基类
@@ -15,27 +17,29 @@ import javax.persistence.MappedSuperclass;
 public class BaseModel {
 	
 	@Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+	@GenericGenerator(name="hibernate-uuid",strategy="uuid")
+	@GeneratedValue(generator="hibernate-uuid")
     @Column(name="id")
-	private Long id;
+	private String id;
 	
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
 	//时间戳
-	private Long timestamp;
+	private Long version;
 	
-	public Long getTimestamp() {
-		return timestamp;
+	@Version
+	public Long getVersion() {
+		return version;
 	}
 
-	public void setTimestamp(Long timestamp) {
-		this.timestamp = timestamp;
+	public void setVersion(Long version) {
+		this.version = version;
 	}
 
 	

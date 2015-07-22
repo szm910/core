@@ -2,8 +2,8 @@ package com.shizm.model;
 
 import javax.persistence.Entity;
 
-@Entity
-public class Users extends BaseModel {
+@Entity(name="Users")
+public class User extends BaseModel {
 	
 	public String name;
 
@@ -13,5 +13,10 @@ public class Users extends BaseModel {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	@Override
+	public String toString() {
+		return "User [name=" + name + "]";
 	}
 }
