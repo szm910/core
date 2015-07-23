@@ -13,6 +13,10 @@
   <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   </listener>
+ <!--  <welcome-file-list>
+  	<welcome-file>/index</welcome-file>
+  </welcome-file-list>
+  --> 
   <!-- 定义DispatcherServlet -->
   <servlet>
     <servlet-name>shizm-dispatcher</servlet-name>

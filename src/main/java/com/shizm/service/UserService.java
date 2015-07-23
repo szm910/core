@@ -1,17 +1,25 @@
 package com.shizm.service;
 
-import com.shizm.dao.UserDao;
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.shizm.dao.IUserDao;
+import com.shizm.dao.impl.UserDao;
 import com.shizm.model.User;
 
+@Transactional
+@Service("userService")
 public class UserService {
+	@Resource(name="userDao")
+	private IUserDao userDao;
 	
-	private UserDao userDao;
-	
-	public UserDao getUserDao() {
+	public IUserDao getUserDao() {
 		return userDao;
 	}
 
-	public void setUserDao(UserDao userDao) {
+	public void setUserDao(IUserDao userDao) {
 		this.userDao = userDao;
 	}
 	

@@ -1,5 +1,8 @@
 package com.shizm.model;
 
+import java.io.Serializable;
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -14,7 +17,7 @@ import org.hibernate.annotations.GenericGenerator;
  *
  */
 @MappedSuperclass
-public class BaseModel {
+public class BaseModel implements Serializable {
 	
 	@Id
 	@GenericGenerator(name="hibernate-uuid",strategy="uuid")
@@ -32,11 +35,11 @@ public class BaseModel {
 
 	//时间戳
 	@Version
-	private Long version;
-	public Long getVersion() {
+	private Date version;
+	public Date getVersion() {
 		return version;
 	}
-	public void setVersion(Long version) {
+	public void setVersion(Date version) {
 		this.version = version;
 	}
 

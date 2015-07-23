@@ -3,6 +3,8 @@ package com.shizm.controller;
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -21,7 +23,7 @@ public class UserController extends BaseController {
     public ModelAndView hello2(){
         ModelAndView mv = new ModelAndView();
         mv.addObject("message", "HelloMVC");
-        mv.setViewName("users");
+        mv.setViewName("user/users");
         return mv;
     }
     
@@ -32,19 +34,18 @@ public class UserController extends BaseController {
         
         ModelAndView mv = new ModelAndView();
         mv.addObject("message", c);
-        mv.setViewName("users");
+        mv.setViewName("user/users");
         return mv;
     }
     @RequestMapping(value="/add",method=RequestMethod.GET)
     public ModelAndView addUser(){
-    	
         User user=new User();
         user.name="test";
         service.saveUser(user);
         
         ModelAndView mv = new ModelAndView();
         mv.addObject("message", user);
-        mv.setViewName("users");
+        mv.setViewName("user/users");
         return mv;
     }
     
@@ -56,8 +57,16 @@ public class UserController extends BaseController {
         service.saveUser(user);
         ModelAndView mv = new ModelAndView();
         mv.addObject("message", user);
-        mv.setViewName("users");
+        mv.setViewName("user/users");
         return mv;
     }
     
+    @RequestMapping(value="/display/{name:\\w+}-{age:\\d+}", method = {RequestMethod.GET})
+    public ModelAndView display(@PathVariable(value="name") String name, @PathVariable(value="age") Integer age){
+    	ModelAndView mv=new ModelAndView();
+    	mv.addObject("name",name);
+    	mv.addObject("age",age);
+    	mv.setViewName("user/display");
+    	return mv;
+    }
 }
