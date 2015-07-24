@@ -16,6 +16,7 @@ import org.hibernate.annotations.GenericGenerator;
  * @author shizm
  *
  */
+@SuppressWarnings("serial")
 @MappedSuperclass
 public class BaseModel implements Serializable {
 	

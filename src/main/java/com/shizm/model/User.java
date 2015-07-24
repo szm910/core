@@ -3,6 +3,8 @@ package com.shizm.model;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+
+@SuppressWarnings("serial")
 @Entity
 @Table(name="Users")
 public class User extends BaseModel {

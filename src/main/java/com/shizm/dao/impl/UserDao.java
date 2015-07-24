@@ -15,9 +15,9 @@ import com.shizm.model.User;
  * @author shizm
  *
  */
+@SuppressWarnings("unchecked")
 @Repository("userDao")
-public class UserDao extends BaseDao<User,String> implements IUserDao {
-	@SuppressWarnings("unchecked")
+public class UserDao extends BaseDao<User, String>implements IUserDao {
 	public List<User> getAllUsers() {
 		String hsql = "from User";
 		Session session = getSessionFactory().getCurrentSession();

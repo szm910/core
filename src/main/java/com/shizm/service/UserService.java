@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.shizm.dao.IUserDao;
-import com.shizm.dao.impl.UserDao;
 import com.shizm.model.User;
 
 @Transactional
