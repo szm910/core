@@ -77,7 +77,7 @@ public class UserController {
     	List<User> users=new ArrayList<User>();
     	User user=new User();
     	user.setAge(10);
-    	user.setName("sdf");
+    	user.setName("师曾敏");
     	user.setPassword("123");
     	User user1=new User();
     	user1.setAge(10);
