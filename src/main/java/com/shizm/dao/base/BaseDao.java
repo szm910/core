@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
- 
+
 import org.hibernate.Query;
 import org.hibernate.ScrollableResults;
 import org.hibernate.Session;
@@ -30,7 +30,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  */
 @SuppressWarnings({ "rawtypes", "unchecked" })
 public class BaseDao<T, ID extends Serializable> implements IBaseDao<T, ID> {
-     
+
     @Autowired
     private SessionFactory sessionFactory;
     protected Class<T> entityClass;
