@@ -1,5 +1,6 @@
 package com.shizm.dao.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Query;
@@ -23,5 +24,28 @@ public class UserDao extends BaseDao<User, String>implements IUserDao {
 		Session session = getSessionFactory().getCurrentSession();
 		Query query = session.createQuery(hsql);
 		return query.list();
+	}
+
+	public User getUser(User user) {
+		if (user != null) {
+			if (user.getId() != null && !user.getId().equals("")) {
+				return this.get(user.getId());
+			} else {
+				StringBuilder sbHql = new StringBuilder();
+				sbHql.append("from User where 1=1 ");
+				ArrayList<Object> params = new ArrayList<Object>();
+				if (user.getName() != null && !user.getName().equals("")) {
+					sbHql.append("and name = ?");
+					params.add(user.getName().trim());
+				}
+				if (user.getPassword() != null && !user.getPassword().equals("")) {
+					sbHql.append("and password = ?");
+					params.add(user.getPassword().trim());
+				}
+				return this.getByHQL(sbHql.toString(), params.toArray());
+			}
+		} else {
+			return null;
+		}
 	}
 }

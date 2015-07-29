@@ -30,5 +30,9 @@ public class UserService {
 		userDao.save(user);
 		return true;
 	}
+	
+	public User getUser(User user){
+		return userDao.getUser(user);
+	}
 
 }

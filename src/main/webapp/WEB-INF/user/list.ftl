@@ -9,5 +9,3 @@
    name:${user.name}
    age:${user.age}
  </#list>
-</body>
-</html>

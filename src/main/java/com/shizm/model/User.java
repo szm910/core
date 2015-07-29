@@ -44,6 +44,6 @@ public class User extends BaseModel {
 
 	@Override
 	public String toString() {
-		return "User [name=" + name + "]";
+		return "User [name=" + name + ", age=" + age + ", password=" + password + "]";
 	}
 }

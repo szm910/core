@@ -1,0 +1,117 @@
+@CHARSET "UTF-8";
+
+.orderMange_top {
+	background: #fbfbfb;
+	height: 33px;
+	line-height: 33px;
+	border-bottom: 1px solid #eaeaea;
+	width: 100%;
+	min-width: 1220px;
+}
+
+.orderMange_top, .orderMange_top a {
+	color: #666666;
+}
+
+/*顶部头像下拉部分-----↓-----*/
+.topUserName {
+	padding: 0 6px;
+	height: 35px;
+	position: relative;
+	left: 0;
+	top: 0;
+}
+
+.topUserName:hover {
+	box-shadow: 0px 10px 25px #AEAEAE;
+	border-bottom: none;
+	background-color: #fff;
+	z-index: 21;
+	float: left;
+}
+
+.topUserName:hover .userMsgDiv {
+	display: block;
+	position: absolute;
+	top: 30px;
+	left: 0px;
+	box-shadow: 0px 10px 15px #AEAEAE;
+	height: 90px;
+	width: 235px;
+	background-color: #fff;
+	z-index: 3;
+	font-size: 12px;
+}
+
+.topUserName:hover .agentserve {
+	display: block;
+	position: absolute;
+	top: 30px;
+	left: 0px;
+	box-shadow: 0px 10px 15px #AEAEAE;
+	height: 80px;
+	width: 140px;
+	background-color: #fff;
+	z-index: 3;
+}
+
+.topUserName:hover .agentserve li.serveMsg {
+	padding-left: 16px;
+	text-align: left;
+	height: 40px;
+	line-height: 40px;
+}
+
+.userMsgDiv {
+	display: none;
+}
+
+.topUserName:hover .agentserve li.divider {
+	border-bottom: 1px solid #EFEFEF;
+}
+
+.topUserName:hover .caret {
+	-moz-transform: rotate(180deg);
+	-webkit-transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	transform: rotate(180deg);
+	-moz-transition: transform 0.5s ease-in-out;
+	-o-transition: transform 0.5s ease-in-out;
+	-webkit-transition: transform 0.5s ease-in-out;
+	transition: transform 0.5s ease-in-out;
+}
+
+.topUserName .avatar {
+	padding: 15px;
+}
+
+.topUserName .avatar img:hover {
+	border-radius: 0%;
+	-moz-transition: all 0.6s ease-in-out;
+	-o-transition: all 0.6s ease-in-out;
+	-webkit-transition: all 0.6s ease-in-out;
+	transition: all 0.6s ease-in-out;
+}
+/*顶部头像下拉部分-----↑-----*/
+.topBar {
+	background-color: #fff;
+	height: 50px;
+	border-bottom: 2px solid #03a076;
+	font-size: 14px;
+	color: #4f4f4f;
+}
+
+.topBar .companyLogo {
+	width: 60px;
+	height: 36px;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	overflow: hidden;
+}
+
+.topBar .companyLogo img {
+	max-width: 60px;
+	max-height: 36px;
+}
