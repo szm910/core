@@ -1,4 +1,4 @@
-package com.shizm.service;
+package com.shizm.service.impl;
 
 import javax.annotation.Resource;
 
@@ -7,7 +7,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.shizm.dao.IUserDao;
 import com.shizm.model.User;
-
 @Transactional
 @Service("userService")
 public class UserService {

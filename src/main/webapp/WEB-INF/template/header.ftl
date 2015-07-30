@@ -2,12 +2,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" href="/core/css/bootstrap.css">
-<link rel="stylesheet" href="/core/css/base.css">
-<script language="javascript" src="/core/js/angular-1.3.12.js"></script>
+<#assign path="${request.getContextPath()}">
+<link rel="stylesheet" href="${path}/css/bootstrap.css">
+<link rel="stylesheet" href="${path}/css/base.css">
+<script language="javascript" src="${path}/js/angular-1.3.12.js"></script>
 <title>首页</title>
 </head>
 <body>
+
 <div class="ng-scope">
         <!--top-->
         <div class="orderMange_top">
@@ -18,7 +20,7 @@
                         <a href="javascript:void(0);return false;"><span>1234</span><span class="caret"></span></a>
                         <div class="userMsgDiv">
                             <div class="pull-left avatar"><img style="width:60px;height:60px" class="img-circle" src="/photo/avatar/16/avatar_8b752463-e5ce-4ee4-96fb-e5e6f25f698d.jpg" alt="1234"></div>
-                            <div class="pull-right m-r-25 m-t-15"><a href="/Users/account#userbase">账号管理</a> | <a href="/Secure/logout">退出</a></div>
+                            <div class="pull-right m-r-25 m-t-15"><a href="/Users/account#userbase">账号管理</a> | <a href="../user/logout">退出</a></div>
                         </div>
                     </div>
                 </div>
@@ -39,3 +41,4 @@
         </div>
         <div style="clear:both"></div>
     </div>
+    ${path}
