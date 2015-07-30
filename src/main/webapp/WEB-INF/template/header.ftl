@@ -41,4 +41,3 @@
         </div>
         <div style="clear:both"></div>
     </div>
-    ${path}
