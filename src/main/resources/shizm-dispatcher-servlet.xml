@@ -17,10 +17,15 @@
 	<!-- 启动自动扫描该包下所有的Bean(例如@Controller) -->
 	<context:component-scan base-package="com.shizm" />
 	<tx:annotation-driven transaction-manager="transactionManager" />
+	<!-- 首页设置 -->
 	<!-- <mvc:view-controller path="/" view-name="index"/> -->
+	
+	<!-- 静态资源引用 -->
 	<mvc:resources location="/image/" mapping="/image/**" />
 	<mvc:resources location="/js/" mapping="/js/**" />
 	<mvc:resources location="/css/" mapping="/css/**" />
+	
+	<!-- 拦截器 -->
 	<mvc:interceptors>
 		<mvc:interceptor>
 			<mvc:mapping path="/user/*"/>

@@ -20,6 +20,7 @@ public class UserController {
 	@Resource(name = "userService")
 	private UserService userService;
 
+	
 	@RequestMapping(value = "/list", method = { RequestMethod.GET })
 	public ModelAndView list() {
 		ModelAndView mv = new ModelAndView();
