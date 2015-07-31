@@ -3,12 +3,15 @@ package com.shizm.model;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.Transient;
 
 @SuppressWarnings("serial")
 @Entity
 public class AuthorityGroup extends BaseModel {
 	
 	private String groupName;
+	
+	@Transient
 	private List<Authority>  lsAuthority;
 	
 	public String getGroupName() {
