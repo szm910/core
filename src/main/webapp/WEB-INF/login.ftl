@@ -5,7 +5,7 @@
  			<div class="form-group">
  				<label class="col-xs-2">用户名:</label>
  				<div class="col-xs-10">
- 					<input type="text"  class="form-control" name="name" placeholder="请输入名称"/>	
+ 					<input type="text"  class="form-control" name="userName" placeholder="请输入名称"/>	
  				</div>
  			</div>
  			<div class="form-group">

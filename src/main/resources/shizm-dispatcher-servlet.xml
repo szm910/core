@@ -21,4 +21,10 @@
 	<mvc:resources location="/image/" mapping="/image/**" />
 	<mvc:resources location="/js/" mapping="/js/**" />
 	<mvc:resources location="/css/" mapping="/css/**" />
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/user/*"/>
+			<bean class="com.shizm.controller.interceptor.CommonInterceptor"></bean>
+		</mvc:interceptor>
+	</mvc:interceptors>
 </beans>

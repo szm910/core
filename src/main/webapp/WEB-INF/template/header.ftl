@@ -17,11 +17,17 @@
                 <div class="col-xs-6">
                     <div class="pull-left"><span>您好！</span></div>
                     <div class="topUserName pull-left">
-                        <a href="javascript:void(0);return false;"><span>1234</span><span class="caret"></span></a>
-                        <div class="userMsgDiv">
-                            <div class="pull-left avatar"><img style="width:60px;height:60px" class="img-circle" src="/photo/avatar/16/avatar_8b752463-e5ce-4ee4-96fb-e5e6f25f698d.jpg" alt="1234"></div>
-                            <div class="pull-right m-r-25 m-t-15"><a href="/Users/account#userbase">账号管理</a> | <a href="../user/logout">退出</a></div>
-                        </div>
+                        <a href="javascript:void(0);return false;">
+                        <#if loginUser??>
+	                        <span>${loginUser.userName}</span>
+	                        <span class="caret"></span></a>
+	                        <div class="userMsgDiv">
+	                            <div class="pull-left avatar"><img style="width:60px;height:60px" class="img-circle" src="/photo/avatar/16/avatar_8b752463-e5ce-4ee4-96fb-e5e6f25f698d.jpg" alt="1234"></div>
+	                            <div class="pull-right m-r-25 m-t-15"><a href="/Users/account#userbase">账号管理</a> | <a href="${path}/logout">退出</a></div>
+	                        </div>
+                        <#else>
+                        	<span><a href="${path}/user/login">登录</a></span>
+                        </#if>
                     </div>
                 </div>
                 <div class="col-xs-6 orderMange_top_r">

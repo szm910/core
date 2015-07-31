@@ -34,9 +34,9 @@ public class UserDao extends BaseDao<User, String>implements IUserDao {
 				StringBuilder sbHql = new StringBuilder();
 				sbHql.append("from User where 1=1 ");
 				ArrayList<Object> params = new ArrayList<Object>();
-				if (user.getName() != null && !user.getName().equals("")) {
-					sbHql.append("and name = ?");
-					params.add(user.getName().trim());
+				if (user.getUserName() != null && !user.getUserName().equals("")) {
+					sbHql.append("and userName = ?");
+					params.add(user.getUserName().trim());
 				}
 				if (user.getPassword() != null && !user.getPassword().equals("")) {
 					sbHql.append("and password = ?");

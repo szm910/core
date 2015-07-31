@@ -11,18 +11,29 @@ import org.hibernate.validator.constraints.Range;
 @Entity
 @Table(name="Users")
 public class User extends BaseModel {
+	
 	@NotEmpty(message="name.not.empty")
-	private String name;
+    private String userName;
+	
     @Range(min=0, max=150,message="{age.not.inrange}")
 	private int age;
+    
+    private String realName;
 
-
-	public String getName() {
-		return name;
+	public String getUserName() {
+		return userName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public String getRealName() {
+		return realName;
+	}
+
+	public void setRealName(String realName) {
+		this.realName = realName;
 	}
 
 	public int getAge() {
@@ -44,6 +55,6 @@ public class User extends BaseModel {
 
 	@Override
 	public String toString() {
-		return "User [name=" + name + ", age=" + age + ", password=" + password + "]";
+		return "User [userName=" + userName + ", age=" + age + ", password=" + password + "]";
 	}
 }
