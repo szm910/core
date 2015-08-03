@@ -2,15 +2,19 @@ package com.shizm.service.impl;
 
 import javax.annotation.Resource;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.shizm.dao.IUserDao;
 import com.shizm.model.User;
+import com.shizm.service.IUserService;
+
 @Transactional
-@Service("userService")
-public class UserService {
-	@Resource(name="userDao")
+@Service
+public class UserService implements IUserService {
+	
+	@Autowired
 	private IUserDao userDao;
 	
 	public IUserDao getUserDao() {

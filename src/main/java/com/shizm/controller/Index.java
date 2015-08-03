@@ -1,9 +1,9 @@
 package com.shizm.controller;
 
 
-import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -12,12 +12,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.shizm.model.User;
-import com.shizm.service.impl.UserService;
+import com.shizm.service.IUserService;
 
 @Controller
 public class Index extends BaseController {
-	@Resource(name = "userService")
-	private UserService userService;
+	@Autowired
+	private IUserService userService;
 	
 	@RequestMapping(value = { "", "/","/index" })
 	public ModelAndView index(@CookieValue(value="uutoken", defaultValue="") String uutoken,HttpSession session) {

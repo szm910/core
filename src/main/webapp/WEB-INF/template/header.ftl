@@ -26,7 +26,7 @@
 	                            <div class="pull-right m-r-25 m-t-15"><a href="/Users/account#userbase">账号管理</a> | <a href="${path}/logout">退出</a></div>
 	                        </div>
                         <#else>
-                        	<span><a href="${path}/user/login">登录</a></span>
+                        	<span><a href="${path}/login">登录</a></span>
                         </#if>
                     </div>
                 </div>

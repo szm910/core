@@ -17,7 +17,7 @@ import com.shizm.model.User;
  *
  */
 @SuppressWarnings("unchecked")
-@Repository("userDao")
+@Repository
 public class UserDao extends BaseDao<User, String>implements IUserDao {
 	public List<User> getAllUsers() {
 		String hsql = "from User";
