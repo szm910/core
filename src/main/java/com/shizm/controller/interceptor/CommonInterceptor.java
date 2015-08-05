@@ -22,7 +22,7 @@ public class CommonInterceptor extends HandlerInterceptorAdapter {
 			user = request.getSession().getAttribute("loginUser");
 		}
 		if (user == null) {
-			 response.sendRedirect(request.getContextPath()+"/login"); 
+			// response.sendRedirect(request.getContextPath()+"/login"); 
 		}
 		return true;
 	}
@@ -30,6 +30,6 @@ public class CommonInterceptor extends HandlerInterceptorAdapter {
 	@Override
 	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,
 			ModelAndView modelAndView) throws Exception {
-
+		
 	}
 }

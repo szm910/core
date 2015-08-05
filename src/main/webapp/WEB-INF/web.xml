@@ -33,7 +33,7 @@
 			<!-- 默认/WEB-INF/[servlet名字]-servlet.xml加载上下文， 如果配置了contextConfigLocation参数， 
 				将使用classpath:/lei-dispatcher-servlet.xml加载上下文 -->
 			<param-name>contextConfigLocation</param-name>
-			<param-value>classpath:/shizm-dispatcher-servlet.xml</param-value>
+			<param-value>classpath:/spring-servlet.xml</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
